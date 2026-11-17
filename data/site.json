@@ -1,0 +1,59 @@
+{
+  "_help": "Test site settings. Seasons: fill in 'dates' (YYYY-MM-DD) once open days are known and the site works out open / opening soon / closed by itself. Tours: set 'active' to true when farm tours restart, and 'bookingOpen' to true with a bookingUrl to show Book buttons. In 'nextSeason', {year} is filled in automatically (this year, or next year once the season has passed). Add ?tours=on to any page address to preview the tours without changing this file. Notice: put a short message (and optional link) to show a yellow bar at the top of every page, e.g. for a weather closure; leave the message empty to hide it.",
+  "notice": {
+    "message": "",
+    "link": "",
+    "linkText": ""
+  },
+  "seasons": [
+    {
+      "id": "sweetcorn",
+      "name": "Sweetcorn & veg",
+      "months": [7, 8],
+      "when": "end of July to early September (school summer holidays)",
+      "nextSeason": "late July {year}",
+      "dates": [],
+      "open": "10:00",
+      "close": "16:00",
+      "main": true
+    },
+    {
+      "id": "tours",
+      "name": "Farm tours",
+      "months": [7, 8],
+      "when": "during the school summer holidays",
+      "nextSeason": "in {year}",
+      "dates": [],
+      "open": "10:00",
+      "close": "16:00"
+    },
+    {
+      "id": "pumpkins",
+      "name": "Pumpkins",
+      "months": [10],
+      "when": "October",
+      "nextSeason": "October {year}",
+      "dates": [],
+      "open": "10:00",
+      "close": "16:00"
+    }
+  ],
+  "tours": {
+    "active": false,
+    "bookingOpen": false,
+    "bookingUrl": "https://buytickets.at/llannantfarm",
+    "summary": "Meet our Aberdeen Angus and Black Limousin cattle, the ponies and the tractors, with one of the family showing you round.",
+    "details": [
+      "Booking is per car (up to 6 people) in hourly slots.",
+      "The tour is free. You only pay for what you pick."
+    ]
+  },
+  "visit": {
+    "address": "Llannant Farm, Penyrheol, Gorseinon, Swansea",
+    "postcode": "SA4 4ND",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Llannant+Farm&query_place_id=ChIJmfCstwbzbkgRxw4iW5U662c",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJmfCstwbzbkgRxw4iW5U662c",
+    "facebook": "https://www.facebook.com/llannantfarm",
+    "email": "contact@llannantfarm.com"
+  }
+}
