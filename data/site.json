@@ -39,7 +39,7 @@
     }
   ],
   "tours": {
-    "active": false,
+    "active": true,
     "bookingOpen": false,
     "bookingUrl": "https://buytickets.at/llannantfarm",
     "summary": "Meet our Aberdeen Angus and Black Limousin cattle, the ponies and the tractors, with one of the family showing you round.",

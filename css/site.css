@@ -213,6 +213,7 @@ details p { margin: .7em 0 0; }
 .tours-off [data-tours] { display: none !important; }
 .tours-on [data-tours-off] { display: none !important; }
 html:not(.booking-open) [data-booking] { display: none !important; }
+html.booking-open [data-booking-closed] { display: none !important; } /* "booking opens later" notes */
 
 /* Footer */
 .site-footer { background: #1f2a1b; color: #cfd6c6; padding: 48px 0 32px; font-size: .95rem; }
