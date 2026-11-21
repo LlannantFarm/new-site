@@ -4,7 +4,7 @@
  * data/reviews.json  the Facebook reviews
  *
  * Page addresses can carry test switches:
- *   ?tours=on                 show the farm tours and Book buttons as if they had restarted
+ *   ?tours=on                 show the farm tours and their Book buttons, whatever site.json says
  *   ?now=2027-08-14T11:00     see the page as it would be at that date and time (UK)
  *   ?tbc=0                    hide the yellow "still to confirm" highlights
  */
@@ -22,7 +22,8 @@
   // Keep the test switches when moving between pages
   var keep = ["tours", "now", "tbc"].filter(function (k) { return params.has(k); });
   if (keep.length) {
-    document.querySelectorAll('a[href$=".html"], a[href$=".html#visit"]').forEach(function (a) {
+    document.querySelectorAll('a[href*=".html"]').forEach(function (a) {
+      if (/^[a-z]+:/i.test(a.getAttribute("href"))) return;   // leave links to other websites alone
       var u = new URL(a.getAttribute("href"), location.href);
       keep.forEach(function (k) { u.searchParams.set(k, params.get(k)); });
       a.href = u.pathname + u.search + u.hash;
@@ -86,11 +87,11 @@
         var on = s.months.indexOf(i) >= 0;
         cells += '<div class="cal-cell' + (on ? " on" : "") + (on && s.main ? " main" : "") + (on && s.id === "pumpkins" ? " pumpkin" : "") + (i === month ? " now" : "") + '" title="' + MONTHS[i - 1] + '"></div>';
       }
-      return '<div class="cal-row"><div class="label">' + s.name + "</div>" + cells + "</div>";
+      return '<div class="cal-row"><div class="label">' + esc(s.name) + "</div>" + cells + "</div>";
     }).join("");
     // The coloured grid is for sighted visitors; screen readers get the same information as a list
     var said = '<ul class="sr-only">' + seasons.map(function (s) {
-      return "<li>" + s.name + ": " + s.months.map(function (m) { return MONTHS[m - 1]; }).join(" and ") + "</li>";
+      return "<li>" + esc(s.name) + ": " + s.months.map(function (m) { return MONTHS[m - 1]; }).join(" and ") + "</li>";
     }).join("") + "</ul>";
     el.innerHTML = said + '<div aria-hidden="true">' + head + rows + "</div>" +
       '<p class="cal-note">The outlined box is this month. Exact open days depend on the weather and the crop, so we post them here and on Facebook as soon as we know.</p>';
@@ -193,7 +194,9 @@
   box.setAttribute("aria-label", "Enlarged photo");
   box.innerHTML = '<button type="button">Close ✕</button><img alt=""><p></p>';
   document.body.appendChild(box);
-  var closeBtn = box.querySelector("button"), opener = null;
+  var closeBtn = box.querySelector("button"), big = box.querySelector("img"), opener = null;
+  big.addEventListener("load", function () { big.style.visibility = "visible"; });
+  big.addEventListener("error", function () { big.style.visibility = "visible"; });
   function closeBox() {
     if (!box.classList.contains("open")) return;
     box.classList.remove("open");
@@ -213,8 +216,15 @@
     f.setAttribute("aria-label", "Enlarge photo: " + (cap ? cap.textContent : img.alt));
     function open() {
       opener = f;
-      box.querySelector("img").src = img.getAttribute("data-full") || img.src;
-      box.querySelector("img").alt = img.alt;
+      // A different photo from last time: hide the picture until it has loaded, so the old one
+      // doesn't show under the new caption
+      var url = img.getAttribute("data-full") || img.src;
+      big.alt = img.alt;
+      if (big.src !== url) {
+        big.style.visibility = "hidden";
+        big.src = url;
+        if (big.complete && big.naturalWidth) big.style.visibility = "visible";   // already downloaded
+      }
       box.querySelector("p").textContent = cap ? cap.textContent : img.alt;
       box.classList.add("open");
       document.body.style.overflow = "hidden";
@@ -233,7 +243,6 @@
       f.src = "https://www.youtube-nocookie.com/embed/" + v.getAttribute("data-youtube") + "?autoplay=1";
       f.title = v.getAttribute("data-title") || "Video";
       f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      f.allowFullscreen = true;
       v.innerHTML = "";
       v.appendChild(f);
       f.focus();

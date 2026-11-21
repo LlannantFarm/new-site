@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-GB" class="tours-off">
+<html lang="en-GB" class="tours-on">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,8 @@
 <meta name="twitter:image" content="https://www.llannantfarm.com/images/share/tours.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2f4a2a">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -47,7 +48,7 @@
 
 <main id="main">
   <section class="hero short">
-    <img src="images/20240809-170854243-ios.jpg" alt="Black cattle grazing in the evening sun, with water in the distance" style="object-position:50% 38%" width="1800" height="1350" srcset="images/md/20240809-170854243-ios.jpg 1100w, images/20240809-170854243-ios.jpg 1800w" sizes="100vw">
+    <img src="images/20240809-170854243-ios.jpg" alt="Black cattle grazing in the evening sun, with water in the distance" style="object-position:50% 38%" fetchpriority="high" width="1800" height="1350" srcset="images/md/20240809-170854243-ios.jpg 1100w, images/lg/20240809-170854243-ios.jpg 1600w" sizes="100vw">
     <div class="wrap">
       <span class="eyebrow" style="color:var(--corn)">Farm tours</span>
       <h1>Meet the animals</h1>
@@ -67,8 +68,11 @@
       <div>
         <span class="eyebrow">What you'll see</span>
         <h2>A walk round a working farm</h2>
-        <p class="lead" data-tours-summary></p>
-        <ul class="ticks" data-tours-details></ul>
+        <p class="lead" data-tours-summary>Meet our Aberdeen Angus and Black Limousin cattle, the ponies and the tractors, with one of the family showing you round.</p>
+        <ul class="ticks" data-tours-details>
+          <li>Booking is per car (up to 6 people) in hourly slots.</li>
+          <li>The tour is free. You only pay for what you pick.</li>
+        </ul>
         <p data-booking-closed><strong>Tours run during the school summer holidays.</strong> Dates and booking will go up here and on our <a href="https://www.facebook.com/llannantfarm">Facebook page</a> nearer the time.</p>
         <div class="btns">
           <a class="btn btn-corn" data-booking data-booking-link href="https://buytickets.at/llannantfarm">Book a farm tour</a>
@@ -103,7 +107,7 @@
       </div>
       <div>
         <h2>Contact</h2>
-        <p><a href="https://www.facebook.com/llannantfarm">Facebook</a><br><a href="https://www.instagram.com/llannant">Instagram</a><br><a href="https://www.youtube.com/llannant">YouTube</a><br><a href="tel:+447973712852">07973 712852</a><br><a href="mailto:contact@llannantfarm.com">contact@llannantfarm.com</a></p>
+        <p><a href="https://www.facebook.com/llannantfarm">Facebook</a><br><a href="https://www.instagram.com/llannant">Instagram</a><br><a href="https://www.youtube.com/@llannant">YouTube</a><br><a href="tel:+447973712852">07973 712852</a><br><a href="mailto:contact@llannantfarm.com">contact@llannantfarm.com</a></p>
       </div>
     </div>
     <p class="small">©<span data-year>2026</span> Llannant Farm. All rights reserved. · <a href="privacy.html">Privacy policy</a> · <a href="accessibility.html">Accessibility</a></p>

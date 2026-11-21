@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-GB" class="tours-off">
+<html lang="en-GB" class="tours-on">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,8 @@
 <meta name="twitter:image" content="https://www.llannantfarm.com/images/share/pick-your-own.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2f4a2a">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,7 +37,7 @@
       "name": "Do I need to book?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Just come along on an open day."
+        "text": "No, not for pick your own. Just come along on an open day."
       }
     },
     {
@@ -87,7 +88,7 @@
 
 <main id="main">
   <section class="hero short">
-    <img src="images/20260621-183308828-ios.jpg" alt="Looking down on long rows of sweetcorn stretching across the field, with the greenhouses at the top" style="object-position:50% 60%" width="1800" height="1350" srcset="images/md/20260621-183308828-ios.jpg 1100w, images/20260621-183308828-ios.jpg 1800w" sizes="100vw">
+    <img src="images/20260621-183308828-ios.jpg" alt="Looking down on long rows of sweetcorn stretching across the field, with the greenhouses at the top" style="object-position:50% 60%" fetchpriority="high" width="1800" height="1350" srcset="images/md/20260621-183308828-ios.jpg 1100w, images/lg/20260621-183308828-ios.jpg 1600w" sizes="100vw">
     <div class="wrap">
       <span class="eyebrow" style="color:var(--corn)">Pick your own</span>
       <h1>Pick your own at Llannant</h1>
@@ -185,7 +186,7 @@
           <li>Come along on an open day. Check here or on Facebook first.</li>
           <li>Park on the big concrete yard as you come into the farm.</li>
           <li>The patch is a short walk down on the left. We'll show you what's ready.</li>
-          <li>Pick what you want and pay for what you pick <span class="tbc">(cash or card?)</span>.</li>
+          <li>Pick what you want and pay for what you pick. We take cash and card.</li>
           <li>Bring wellies. It's a working field.</li>
         </ul>
         <p><strong>Llannant Farm, Penyrheol, Gorseinon, Swansea SA4 4ND</strong><br><a data-maps href="https://www.google.com/maps/search/?api=1&amp;query=Llannant+Farm&amp;query_place_id=ChIJmfCstwbzbkgRxw4iW5U662c">Directions in Google Maps</a></p>
@@ -195,8 +196,8 @@
         <h2>Good to know</h2>
         <details>
           <summary>Do I need to book?</summary>
-          <p data-tours-off>No. Just come along on an open day.</p>
-          <p data-tours>Not to pick. Just come along on an open day. If you'd like a farm tour as well, booking a slot guarantees your time.</p>
+          <p>No, not for pick your own. Just come along on an open day.</p>
+          <p data-tours><span data-booking-closed>Farm tours will be bookable here nearer the time.</span><span data-booking>If you'd like a farm tour as well, <a data-booking-link href="https://buytickets.at/llannantfarm">booking a slot</a> guarantees your time.</span></p>
         </details>
         <details>
           <summary>When exactly are you open?</summary>
@@ -212,7 +213,7 @@
         </details>
         <details data-tours>
           <summary>Can we see the animals?</summary>
-          <p>Yes. Book a farm tour to meet the cattle, the ponies and the tractors. <a href="tours.html">About farm tours</a></p>
+          <p>Yes, on a farm tour. Tours run during the school summer holidays, and you'll meet the cattle, the ponies and the tractors. <a href="tours.html">About farm tours</a></p>
         </details>
       </div>
     </div>
@@ -232,7 +233,7 @@
       </div>
       <div>
         <h2>Contact</h2>
-        <p><a href="https://www.facebook.com/llannantfarm">Facebook</a><br><a href="https://www.instagram.com/llannant">Instagram</a><br><a href="https://www.youtube.com/llannant">YouTube</a><br><a href="tel:+447973712852">07973 712852</a><br><a href="mailto:contact@llannantfarm.com">contact@llannantfarm.com</a></p>
+        <p><a href="https://www.facebook.com/llannantfarm">Facebook</a><br><a href="https://www.instagram.com/llannant">Instagram</a><br><a href="https://www.youtube.com/@llannant">YouTube</a><br><a href="tel:+447973712852">07973 712852</a><br><a href="mailto:contact@llannantfarm.com">contact@llannantfarm.com</a></p>
       </div>
     </div>
     <p class="small">©<span data-year>2026</span> Llannant Farm. All rights reserved. · <a href="privacy.html">Privacy policy</a> · <a href="accessibility.html">Accessibility</a></p>

@@ -2,7 +2,7 @@
   "name": "Llannant Farm",
   "short_name": "Llannant Farm",
   "description": "Family farm in Penyrheol, Swansea. Pick your own sweetcorn and veg, farm tours and pumpkins.",
-  "start_url": "/",
+  "start_url": ".",
   "display": "browser",
   "background_color": "#f7f3ea",
   "theme_color": "#2f4a2a",
